@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Intro15" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +17,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1l-cr-lRr">
+                                <rect key="frame" x="70" y="70" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="FKH-Lp-HsB"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Alert 1"/>
+                                <connections>
+                                    <action selector="alertAction1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mDg-vc-3Qx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8k-3j-M5o">
+                                <rect key="frame" x="70" y="120" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="nDQ-JV-auJ"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Alert 2"/>
+                                <connections>
+                                    <action selector="alertAction2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xrs-3C-YED"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-oJ-Lh0">
+                                <rect key="frame" x="70" y="170" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="B3x-ah-Aq3"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Alert 3"/>
+                                <connections>
+                                    <action selector="alertAction3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVW-Ft-VHq"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Some Name Here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pjc-3i-tDz">
+                                <rect key="frame" x="70" y="220" width="460" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQV-7Y-UOV">
+                                <rect key="frame" x="70" y="270" width="460" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxT-NG-SgH">
+                                <rect key="frame" x="70" y="341" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="BYC-92-zbg"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Alert 4"/>
+                                <connections>
+                                    <action selector="alertAction4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bUZ-rg-9jc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="091-gd-aFv">
+                                <rect key="frame" x="70" y="421" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KvX-EQ-kiD"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Login Alert Style"/>
+                                <connections>
+                                    <action selector="userLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5oN-69-Su7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="091-gd-aFv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="3Vf-E6-bNK"/>
+                            <constraint firstItem="r1d-oJ-Lh0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="78x-bf-znh"/>
+                            <constraint firstItem="c1l-cr-lRr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="Bqc-oV-dMg"/>
+                            <constraint firstItem="QQV-7Y-UOV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="IEq-Bz-Vln"/>
+                            <constraint firstItem="YxT-NG-SgH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="JVy-FD-C73"/>
+                            <constraint firstItem="pjc-3i-tDz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="NWh-Q1-qcF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pjc-3i-tDz" secondAttribute="trailing" constant="50" id="Prb-v0-zIy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QQV-7Y-UOV" secondAttribute="trailing" constant="50" id="VcF-IK-J4q"/>
+                            <constraint firstItem="091-gd-aFv" firstAttribute="top" secondItem="YxT-NG-SgH" secondAttribute="bottom" constant="50" id="Wjm-1d-wGz"/>
+                            <constraint firstItem="c1l-cr-lRr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="aJZ-kN-o2v"/>
+                            <constraint firstItem="N8k-3j-M5o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="bqF-I9-ofj"/>
+                            <constraint firstItem="YxT-NG-SgH" firstAttribute="top" secondItem="QQV-7Y-UOV" secondAttribute="bottom" constant="50" id="fa0-7V-yob"/>
+                            <constraint firstItem="N8k-3j-M5o" firstAttribute="top" secondItem="c1l-cr-lRr" secondAttribute="bottom" constant="20" id="iom-RU-qyl"/>
+                            <constraint firstItem="r1d-oJ-Lh0" firstAttribute="top" secondItem="N8k-3j-M5o" secondAttribute="bottom" constant="20" id="tFJ-lu-p1e"/>
+                            <constraint firstItem="pjc-3i-tDz" firstAttribute="top" secondItem="r1d-oJ-Lh0" secondAttribute="bottom" constant="20" id="vv8-Ls-QDv"/>
+                            <constraint firstItem="QQV-7Y-UOV" firstAttribute="top" secondItem="pjc-3i-tDz" secondAttribute="bottom" constant="20" id="xrJ-9z-qgX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alert3Label" destination="QQV-7Y-UOV" id="gSH-cD-bW9"/>
+                        <outlet property="alert3TextField" destination="pjc-3i-tDz" id="lxz-y5-2It"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
