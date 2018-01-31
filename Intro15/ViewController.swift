@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
         
@@ -36,60 +36,60 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: Alert Action 1 and Alert Action 2
-    @IBAction func alertAction1(sender: UIButton) {
+    @IBAction func alertAction1(_ sender: UIButton) {
         
         // Create alert controller
-        let alertControl1 = UIAlertController(title: "Warning", message: "Beware! You have been warned!", preferredStyle: .Alert)
+        let alertControl1 = UIAlertController(title: "Warning", message: "Beware! You have been warned!", preferredStyle: .alert)
         
         // Create alert action
-        let alertActionOk = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let alertActionOk = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         // Add alert action to controller
         alertControl1.addAction(alertActionOk)
         
         // Present alert view controller
-        presentViewController(alertControl1, animated: true, completion: nil)
+        present(alertControl1, animated: true, completion: nil)
         
     }
 
-    @IBAction func alertAction2(sender: UIButton) {
+    @IBAction func alertAction2(_ sender: UIButton) {
         
         // Create alert controller
-        let alertControl2 = UIAlertController(title: "Alert 2", message: "Your action will be process", preferredStyle: .Alert)
+        let alertControl2 = UIAlertController(title: "Alert 2", message: "Your action will be process", preferredStyle: .alert)
         
         // Create alert action
-        let alertActionOk = UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction) -> Void in print("Will processing alert 2 trigger...") })
+        let alertActionOk = UIAlertAction(title: "Ok", style: .default, handler: { (action:UIAlertAction) -> Void in print("Will processing alert 2 trigger...") })
             
         // Add alert action to controller
         alertControl2.addAction(alertActionOk)
         
         // Present alert view controller
-        presentViewController(alertControl2, animated: true, completion: nil)
+        present(alertControl2, animated: true, completion: nil)
         
     }
     
     // MARK: Alert Action 3
-    @IBAction func alertAction3(sender: UIButton) {
+    @IBAction func alertAction3(_ sender: UIButton) {
        
         // Create alert controller
-        let alertControl3 = UIAlertController(title: "Alert 2", message: "Your action will be process", preferredStyle: .Alert)
+        let alertControl3 = UIAlertController(title: "Alert 2", message: "Your action will be process", preferredStyle: .alert)
         
         // Create alert action
-        let alertActionCancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action:UIAlertAction) -> Void in print("Canceling..."); self.alert3Label.text = "Alert 3 just cancelled!" })
+        let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action:UIAlertAction) -> Void in print("Canceling..."); self.alert3Label.text = "Alert 3 just cancelled!" })
         
-        let alertActionConfirm = UIAlertAction(title: "Confirm", style: .Default, handler: alert3OkHandlingProcess)
+        let alertActionConfirm = UIAlertAction(title: "Confirm", style: .default, handler: alert3OkHandlingProcess)
         
         // Add alert action to controller
         alertControl3.addAction(alertActionCancel)
         alertControl3.addAction(alertActionConfirm)
         
         // Present alert view controller
-        presentViewController(alertControl3, animated: true, completion: nil)
+        present(alertControl3, animated: true, completion: nil)
 
         
     }
     
-    func alert3OkHandlingProcess(action: UIAlertAction) {
+    func alert3OkHandlingProcess(_ action: UIAlertAction) {
         
         if alert3TextField.text?.isEmpty == true {
             
@@ -103,39 +103,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
  
     // MARK: Alert Action 4
-    @IBAction func alertAction4(sender: UIButton) {
+    @IBAction func alertAction4(_ sender: UIButton) {
        
         // Create alert controller
-        let alertControl4 = UIAlertController(title: "Selection", message: "Make a Choice:", preferredStyle: .ActionSheet)
+        let alertControl4 = UIAlertController(title: "Selection", message: "Make a Choice:", preferredStyle: .actionSheet)
         
         // Create alert action sheet
-        let select1 = UIAlertAction(title: "Option1", style: .Default, handler: responseHandler)
+        let select1 = UIAlertAction(title: "Option1", style: .default, handler: responseHandler)
         
-        let select2 = UIAlertAction(title: "Option2", style: .Default, handler: responseHandler)
+        let select2 = UIAlertAction(title: "Option2", style: .default, handler: responseHandler)
  
         // Action sheet 3 with sub action sheet
-        let select3 = UIAlertAction(title: "Option3", style: .Default) { (action:UIAlertAction) -> Void in
+        let select3 = UIAlertAction(title: "Option3", style: .default) { (action:UIAlertAction) -> Void in
  
             // Create action sheet within action sheet
             
             // Create sub option controller
-            let option3AlertControl = UIAlertController(title: "Option 3", message: "Choose Sub Option", preferredStyle: .ActionSheet)
+            let option3AlertControl = UIAlertController(title: "Option 3", message: "Choose Sub Option", preferredStyle: .actionSheet)
 
             // Create action sheet for sub option
-            let subOptionA = UIAlertAction(title: "Option3A", style: .Default, handler: self.responseHandler)
+            let subOptionA = UIAlertAction(title: "Option3A", style: .default, handler: self.responseHandler)
             
-            let subOptionB = UIAlertAction(title: "Option3B", style: .Default, handler: self.responseHandler)
+            let subOptionB = UIAlertAction(title: "Option3B", style: .default, handler: self.responseHandler)
             
             // Add sub option
             option3AlertControl.addAction(subOptionA)
             option3AlertControl.addAction(subOptionB)
             
             // Present view controller for sub option
-            self.presentViewController(option3AlertControl, animated: true, completion: nil)
+            self.present(option3AlertControl, animated: true, completion: nil)
             
         }
         
-        let selectCancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let selectCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
         // Add alert action to controller
         alertControl4.addAction(select1)
@@ -144,39 +144,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
         alertControl4.addAction(selectCancel)
         
         // Present alert view controller
-        presentViewController(alertControl4, animated: true, completion: nil)
+        present(alertControl4, animated: true, completion: nil)
         
     }
     
-    func responseHandler(action:UIAlertAction)  {
+    func responseHandler(_ action:UIAlertAction)  {
     
-        let alertUserBack = UIAlertController(title: "Your Selection", message: "You Chose " + action.title!, preferredStyle: .Alert)
+        let alertUserBack = UIAlertController(title: "Your Selection", message: "You Chose " + action.title!, preferredStyle: .alert)
         
-        let alertUserBackOK = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let alertUserBackOK = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alertUserBack.addAction(alertUserBackOK)
         
-        presentViewController(alertUserBack, animated: true, completion: nil)
+        present(alertUserBack, animated: true, completion: nil)
     }
     
   
     // MARK: Alert Action User Login
-    @IBAction func userLoginAction(sender: UIButton) {
+    @IBAction func userLoginAction(_ sender: UIButton) {
         
         // Create alert controller
-        let userLoginAlertControl = UIAlertController(title: "Login", message: "Enter your ID and Password", preferredStyle: .Alert)
+        let userLoginAlertControl = UIAlertController(title: "Login", message: "Enter your ID and Password", preferredStyle: .alert)
         
         // Add textField configuration to alert controller
-        userLoginAlertControl.addTextFieldWithConfigurationHandler { (userIDTextField:UITextField) -> Void in
+        userLoginAlertControl.addTextField { (userIDTextField:UITextField) -> Void in
             userIDTextField.placeholder = "ID or email"
         }
         
-        userLoginAlertControl.addTextFieldWithConfigurationHandler(passwordConfigurationHandler)
+        userLoginAlertControl.addTextField(configurationHandler: passwordConfigurationHandler)
         
         // Create alert action
-        let cancelLogin = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelLogin = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
-        let okLogin = UIAlertAction(title: "Login", style: .Default) { (action:UIAlertAction) in
+        let okLogin = UIAlertAction(title: "Login", style: .default) { (action:UIAlertAction) in
             
             let userIDTextField = userLoginAlertControl.textFields![0] as UITextField
             let userPasswordTextField = userLoginAlertControl.textFields![1] as UITextField
@@ -193,14 +193,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userLoginAlertControl.addAction(cancelLogin)
         userLoginAlertControl.addAction(okLogin)
         
-        presentViewController(userLoginAlertControl, animated: true, completion: nil)
+        present(userLoginAlertControl, animated: true, completion: nil)
         
     }
     
-    func passwordConfigurationHandler(userPasswordTextField: UITextField) {
+    func passwordConfigurationHandler(_ userPasswordTextField: UITextField) {
         
         userPasswordTextField.placeholder = "password"
-        userPasswordTextField.secureTextEntry = true
+        userPasswordTextField.isSecureTextEntry = true
         
     }
 }
